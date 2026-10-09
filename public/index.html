@@ -4,61 +4,74 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="description"
-    content="Cale Bloskas helps organizations solve operational challenges through technology, clear communication, and trusted relationships."
-  >
+  <title>Cale Bloskas | Sales · Leadership · Technology</title>
+  <meta name="description" content="Cale Bloskas helps organizations solve operational challenges through technology, clear communication, and trusted relationships.">
+  <meta name="theme-color" content="#0b1f33">
+  <link rel="canonical" href="https://calebloskas.com/">
 
-  <meta name="theme-color" content="#102a43">
-
-  <meta property="og:title" content="Cale Bloskas">
-  <meta
-    property="og:description"
-    content="Helping organizations solve operational challenges through technology, clear communication, and trusted relationships."
-  >
+  <!-- Social sharing preview (LinkedIn, iMessage, Slack, X, etc.) -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://calebloskas.com">
+  <meta property="og:url" content="https://calebloskas.com/">
+  <meta property="og:title" content="Cale Bloskas">
+  <meta property="og:description" content="Helping organizations solve operational challenges through technology, clear communication, and trusted relationships.">
+  <meta property="og:image" content="https://calebloskas.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cale Bloskas signature on a navy background">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="canonical" href="https://calebloskas.com">
-
-  <title>Cale Bloskas</title>
-
+  <!-- Icons -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Helps Google understand who this site is about -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Cale Bloskas",
+    "url": "https://calebloskas.com/",
+    "image": "https://calebloskas.com/cale-bloskas-headshot.jpg",
+    "email": "mailto:hello@calebloskas.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lubbock", "addressRegion": "TX", "addressCountry": "US" },
+    "sameAs": ["https://www.linkedin.com/in/calebloskas"]
+  }
+  </script>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="shell header-inner">
-      <a class="wordmark" href="#top" aria-label="Cale Bloskas home">
-        Cale Bloskas
-      </a>
+      <a class="wordmark" href="#top" aria-label="Cale Bloskas, back to top">Cale Bloskas</a>
 
       <nav aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
         <a href="#connect">Connect</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <!-- ========== HERO ========== -->
     <section class="hero" id="top">
       <div class="shell hero-inner">
         <p class="eyebrow">Sales · Leadership · Technology</p>
 
-        <div class="signature-lockup" aria-label="Cale Bloskas">
+        <div class="signature-lockup" role="img" aria-label="Cale Bloskas">
           <div class="signature-reveal">
-            <img
-              class="hero-signature"
-              src="/cale-bloskas-signature.png"
-              alt=""
-              width="430"
-              height="119"
-            >
+            <img class="hero-signature" src="/cale-bloskas-signature.png" alt="" width="1758" height="607" fetchpriority="high">
           </div>
-
           <span class="signature-pen" aria-hidden="true"></span>
         </div>
 
@@ -70,62 +83,85 @@
         </p>
 
         <div class="hero-actions">
-          <a
-            class="button button-primary"
-            href="https://www.linkedin.com/in/calebloskas"
-            target="_blank"
-            rel="noopener"
-          >
+          <a class="button button-primary" href="https://www.linkedin.com/in/calebloskas" target="_blank" rel="noopener">
             Connect on LinkedIn
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
-
-          <a
-            class="button button-secondary"
-            href="mailto:hello@calebloskas.com"
-          >
-            Email me
-          </a>
+          <a class="button button-secondary" href="mailto:hello@calebloskas.com">Email me</a>
         </div>
       </div>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About">
+        <span></span>
+      </a>
     </section>
 
+    <!-- ========== ABOUT ========== -->
     <section class="about section" id="about">
-      <div class="shell section-grid">
-        <div>
+      <div class="shell about-grid">
+        <figure class="portrait reveal">
+          <img src="/cale-bloskas-headshot.jpg" alt="Portrait of Cale Bloskas" width="800" height="1000" loading="lazy">
+        </figure>
+
+        <div class="about-body reveal">
           <p class="section-label">About</p>
           <h2>Thoughtful strategy. Clear communication. Lasting relationships.</h2>
-        </div>
 
-        <div class="about-copy">
-          <p>
-            I’m passionate about solving complex business challenges, building
-            strong relationships, and helping organizations make better use of
-            technology.
-          </p>
-
-          <p>
-            Throughout my career, I’ve been drawn to roles where I can simplify
-            difficult problems, earn trust, and create meaningful long-term value
-            for customers.
-          </p>
-
-          <p>
-            Outside of work, I enjoy spending time with my family, exploring new
-            technology, traveling, 3D printing, and continuously learning new skills.
-          </p>
+          <div class="about-copy">
+            <p>
+              I’m passionate about solving complex business challenges, building
+              strong relationships, and helping organizations make better use of
+              technology.
+            </p>
+            <p>
+              Throughout my career, I’ve been drawn to roles where I can simplify
+              difficult problems, earn trust, and create meaningful long-term value
+              for customers.
+            </p>
+            <p>
+              Outside of work, I enjoy spending time with my family, exploring new
+              technology, traveling, 3D printing, and continuously learning new skills.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ========== EXPERTISE ========== -->
+    <section class="expertise section" id="expertise">
+      <div class="shell">
+        <div class="section-head reveal">
+          <p class="section-label">Expertise</p>
+          <h2>Where I add value.</h2>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card reveal">
+            <span class="num">01</span>
+            <h3>Operational strategy</h3>
+            <p>Untangling complex processes and finding the places where technology genuinely makes work easier.</p>
+          </article>
+          <article class="focus-card reveal">
+            <span class="num">02</span>
+            <h3>Technology adoption</h3>
+            <p>Helping teams choose the right tools, roll them out well, and actually get value from them.</p>
+          </article>
+          <article class="focus-card reveal">
+            <span class="num">03</span>
+            <h3>Trusted partnerships</h3>
+            <p>Long-term customer relationships built on clear communication, follow-through, and honesty.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONNECT ========== -->
     <section class="connect section" id="connect">
-      <div class="shell connect-panel">
+      <div class="shell connect-panel reveal">
         <div>
           <p class="section-label">Connect</p>
           <h2>Let’s stay in touch.</h2>
-
-          <p class="connect-copy">
-            Reach out by email or connect with me professionally on LinkedIn.
-          </p>
+          <p class="connect-copy">Reach out by email or connect with me professionally on LinkedIn.</p>
         </div>
 
         <div class="contact-links">
@@ -133,12 +169,7 @@
             <span>Email</span>
             <strong>hello@calebloskas.com</strong>
           </a>
-
-          <a
-            href="https://www.linkedin.com/in/calebloskas"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.linkedin.com/in/calebloskas" target="_blank" rel="noopener">
             <span>LinkedIn</span>
             <strong>linkedin.com/in/calebloskas</strong>
           </a>
@@ -150,7 +181,7 @@
   <footer>
     <div class="shell footer-inner">
       <p>Based in Lubbock, Texas.</p>
-      <p>© <span id="year"></span> Cale Bloskas</p>
+      <p>© <span id="year">2026</span> Cale Bloskas</p>
     </div>
   </footer>
 
