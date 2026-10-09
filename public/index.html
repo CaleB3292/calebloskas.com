@@ -338,11 +338,11 @@
         </div>
 
         <!--
-          Contact form. Paste your Formspree link into data-endpoint below
-          (it looks like https://formspree.io/f/abcd1234). Until then, the form
-          opens a pre-filled email instead, so it works either way.
+          Contact form, sent through Formspree (messages go to hello@calebloskas.com).
+          If data-endpoint is ever emptied, the form falls back to opening a
+          pre-filled email instead.
         -->
-        <form class="contact-form reveal" id="contact-form" data-endpoint="" novalidate>
+        <form class="contact-form reveal" id="contact-form" data-endpoint="https://formspree.io/f/xdeagryj" novalidate>
           <div class="field">
             <label for="cf-name">Name</label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required>
