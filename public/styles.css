@@ -366,26 +366,26 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
 .quote {
   position: relative;
   display: flex; flex-direction: column; justify-content: space-between; gap: 28px;
-  padding: 34px 30px 30px;
+  padding: 64px 30px 30px;
   border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px;
   background: rgba(255, 255, 255, 0.04);
 }
 .quote::before {
   content: "\201C";
-  position: absolute; top: 6px; right: 22px;
-  font-family: var(--serif); font-size: 5rem; line-height: 1; color: var(--accent); opacity: 0.55;
+  position: absolute; top: 14px; left: 26px;
+  font-family: var(--serif); font-size: 4.2rem; line-height: 1; color: var(--accent); opacity: 0.7;
 }
 .quote blockquote { margin: 0; }
 .quote blockquote p { margin: 0; color: rgba(255, 255, 255, 0.86); font-size: 1rem; line-height: 1.6; }
 .quote figcaption { display: flex; flex-direction: column; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); }
 .quote figcaption strong { color: var(--white); font-size: 0.95rem; }
-.quote-featured { grid-column: 1 / -1; padding: 44px 48px 40px; background: rgba(255, 255, 255, 0.07); }
+.quote-featured { grid-column: 1 / -1; padding: 78px 48px 40px; background: rgba(255, 255, 255, 0.07); }
 .quote-featured blockquote p {
   max-width: 900px;
   font-family: var(--serif); font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.35; letter-spacing: -0.015em;
   color: var(--white);
 }
-.quote-featured::before { font-size: 7rem; right: 34px; }
+.quote-featured::before { font-size: 5.5rem; left: 42px; top: 16px; }
 
 /* ---------- Contact form ---------- */
 .contact-form {
@@ -458,7 +458,8 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
   .hero { min-height: auto; padding: 140px 0 140px; }
   .about-grid, .connect-panel, .principles-grid { grid-template-columns: 1fr; gap: 48px; }
   .quotes { grid-template-columns: 1fr; }
-  .quote-featured { padding: 36px 30px 32px; }
+  .quote-featured { padding: 70px 30px 32px; }
+  .quote-featured::before { left: 26px; }
   .results { margin-top: -48px; }
   .portrait { position: relative; top: auto; max-width: 380px; }
   .section { padding: 90px 0; }
