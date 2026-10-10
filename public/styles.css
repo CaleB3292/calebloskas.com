@@ -12,6 +12,7 @@
   --line: rgba(16, 42, 67, 0.14);
   --white: #ffffff;
   --accent: #c9a96e;
+  --accent-deep: #8a6d3b;   /* gold for small text on light backgrounds */
   --serif: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --shell: 1160px;
@@ -83,6 +84,7 @@ figure { margin: 0; }
 .site-header.is-scrolled .header-inner { min-height: 66px; }
 
 .wordmark {
+  display: inline-flex; align-items: center; gap: 12px;
   font-family: var(--serif);
   font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; text-decoration: none;
 }
@@ -138,8 +140,8 @@ nav a:hover::after, nav a.is-active::after { transform: scaleX(1); }
   opacity: 0; transform: translateY(14px);
   animation: fade-up 0.8s ease forwards;
 }
-.hero-statement { animation-delay: 2.2s; }
-.hero-actions { animation-delay: 2.5s; }
+.hero-statement { animation-delay: 2.6s; }
+.hero-actions { animation-delay: 3s; }
 @keyframes fade-up { to { opacity: 1; transform: none; } }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -174,24 +176,11 @@ nav a:hover::after, nav a.is-active::after { transform: scaleX(1); }
 @keyframes scroll-dot { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }
 
 /* ---------- Signature ---------- */
-.signature-lockup { position: relative; width: 100%; max-width: 720px; margin: 4px 0 34px; }
-
-.signature-reveal {
-  width: 100%; overflow: hidden; clip-path: inset(0 100% 0 0);
-  animation: write-signature 2.8s cubic-bezier(0.65, 0, 0.35, 1) 0.35s forwards;
-}
+.signature-lockup { position: relative; width: 100%; max-width: 520px; margin: 0 0 30px; color: var(--white); }
 .hero-signature { display: block; width: 100%; height: auto; filter: brightness(0) invert(1); opacity: 0.98; }
-
-.signature-pen {
-  position: absolute; top: 52%; left: 0; width: 8px; height: 8px; border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92); box-shadow: 0 0 18px rgba(255, 255, 255, 0.75);
-  transform: translate(-50%, -50%); opacity: 0;
-  animation: pen-travel 2.8s cubic-bezier(0.65, 0, 0.35, 1) 0.35s forwards;
-}
-@keyframes write-signature { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
-@keyframes pen-travel {
-  0% { left: 0; opacity: 0; } 5% { opacity: 1; } 92% { opacity: 1; } 100% { left: 100%; opacity: 0; }
-}
+/* While the animated version loads, hide the static one so it doesn't flash */
+.sig-anim .hero-signature { visibility: hidden; }
+.signature-live svg { display: block; width: 100%; height: auto; }
 
 /* ---------- Sections ---------- */
 .section { padding: 120px 0; }
@@ -294,7 +283,7 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.9rem; font-weight: 500; letter-spacing: 0.01em;
   opacity: 0; transform: translateY(14px);
-  animation: fade-up 0.8s ease 2.35s forwards;
+  animation: fade-up 0.8s ease 2.8s forwards;
 }
 .hero-role .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
 
@@ -443,6 +432,9 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
 .timeline .where { margin: 0 0 10px; font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
 .timeline p:last-child { margin: 0; max-width: 680px; color: var(--muted); }
 
+.wordmark img { width: 34px; height: 34px; flex: none; transition: transform 0.3s ease; }
+.wordmark:hover img { transform: rotate(-8deg); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .focus-grid { grid-template-columns: 1fr; }
@@ -472,6 +464,8 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
   nav { gap: 16px; }
   nav a { font-size: 0.8rem; }
   .nav-optional { display: none; }
+  .wordmark { gap: 8px; }
+  .wordmark img { width: 28px; height: 28px; }
   .timeline::before { left: 5px; }
   .timeline li { grid-template-columns: 1fr; padding-left: 32px; }
   .timeline li::before { left: 0; }
@@ -489,13 +483,11 @@ footer { padding: 34px 0 46px; color: rgba(255, 255, 255, 0.7); background: var(
   .contact-links a { align-items: flex-start; flex-direction: column; gap: 3px; }
   .contact-links strong { text-align: left; }
   .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
-  .signature-lockup { margin-bottom: 28px; }
+  .signature-lockup { margin-bottom: 24px; max-width: 420px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
-  .signature-reveal { clip-path: inset(0); }
-  .signature-pen { display: none; }
   .hero-statement, .hero-actions, .hero-role, .scroll-cue, .js .reveal { opacity: 1; transform: none; }
 }

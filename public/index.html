@@ -22,6 +22,7 @@
 
   <!-- Icons -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Fonts -->
@@ -30,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/styles.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("sig-anim");</script>
 
   <!-- Helps Google understand who this site is about -->
   <script type="application/ld+json">
@@ -54,7 +55,7 @@
 
   <header class="site-header" id="site-header">
     <div class="shell header-inner">
-      <a class="wordmark" href="#top" aria-label="Cale Bloskas, back to top">Cale Bloskas</a>
+      <a class="wordmark" href="#top" aria-label="Cale Bloskas, back to top"><img src="/brand/cb-monogram-small.svg" alt="" width="34" height="34">Cale Bloskas</a>
 
       <nav aria-label="Primary navigation">
         <a href="#about">About</a>
@@ -71,11 +72,10 @@
       <div class="shell hero-inner">
         <p class="eyebrow">Sales · Leadership · Technology</p>
 
-        <div class="signature-lockup" role="img" aria-label="Cale Bloskas">
-          <div class="signature-reveal">
-            <img class="hero-signature" src="/cale-bloskas-signature.png" alt="" width="1758" height="607" fetchpriority="high">
-          </div>
-          <span class="signature-pen" aria-hidden="true"></span>
+        <!-- Cale's real signature. script.js swaps in /brand/signature-animated.svg,
+             which redraws it in the order the strokes were actually written. -->
+        <div class="signature-lockup" id="signature" role="img" aria-label="Cale Bloskas signature">
+          <img class="hero-signature" src="/brand/cale-bloskas-signature.svg" alt="" width="1430" height="700" fetchpriority="high">
         </div>
 
         <h1 class="sr-only">Cale Bloskas, Mid-Market Sales Leader</h1>
