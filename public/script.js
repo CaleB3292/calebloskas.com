@@ -4,23 +4,33 @@ document.documentElement.classList.add("js");
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---------- Signature replay when you come back to the tab ----------
-const signatureLockup = document.querySelector(".signature-lockup");
+// ---------- Signature: redraw it the way Cale actually signed ----------
+// /brand/signature-animated.svg holds the strokes in the order they were written.
+const signatureLockup = document.getElementById("signature");
+let signatureSVG = null;
 
-function replaySignature() {
-  if (!signatureLockup) return;
-  const reveal = signatureLockup.querySelector(".signature-reveal");
-  const pen = signatureLockup.querySelector(".signature-pen");
-  [reveal, pen].forEach((element) => {
-    if (!element) return;
-    element.style.animation = "none";
-    void element.offsetWidth;
-    element.style.animation = "";
-  });
+function playSignature() {
+  if (!signatureLockup || !signatureSVG) return;
+  const live = signatureLockup.querySelector(".signature-live") || document.createElement("div");
+  live.className = "signature-live";
+  live.setAttribute("aria-hidden", "true");
+  live.innerHTML = signatureSVG;            // a fresh copy restarts the animation
+  if (!live.parentNode) signatureLockup.appendChild(live);
+}
+
+if (signatureLockup && document.documentElement.classList.contains("sig-anim")) {
+  fetch("/brand/signature-animated.svg")
+    .then((r) => (r.ok ? r.text() : Promise.reject()))
+    .then((svg) => {
+      signatureSVG = svg;
+      signatureLockup.querySelector(".hero-signature").style.display = "none";
+      playSignature();
+    })
+    .catch(() => document.documentElement.classList.remove("sig-anim"));
 }
 
 document.addEventListener("visibilitychange", () => {
-  if (!document.hidden && window.scrollY < 80) replaySignature();
+  if (!document.hidden && window.scrollY < 80) playSignature();
 });
 
 // ---------- Header turns solid after you scroll past the top ----------
