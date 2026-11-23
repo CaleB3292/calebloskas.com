@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas Card Address | The Bloskas Family</title>
+  <!-- Private page: shared by link only, kept out of search engines -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Send the Bloskas family your mailing address for our Christmas card list.">
+  <meta name="theme-color" content="#0b1f33">
+
+  <!-- Preview when the link is texted or emailed -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="We'd love to send you a Christmas card!">
+  <meta property="og:description" content="Takes 30 seconds: share your mailing address with the Bloskas family.">
+  <meta property="og:url" content="https://calebloskas.com/christmas/">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy-deep: #0b1f33;
+      --paper: #faf9f6;
+      --paper-alt: #f2f0eb;
+      --ink: #17212b;
+      --muted: #56616d;
+      --line: rgba(16, 42, 67, 0.16);
+      --gold: #c9a96e;
+      --gold-deep: #8a6d3b;
+      --berry: #8e2c2c;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    html {
+      min-height: 100%;
+      background-color: var(--navy-deep);
+      background-image:
+        radial-gradient(circle at 85% 10%, rgba(201, 169, 110, 0.16), transparent 26rem),
+        radial-gradient(circle at 10% 95%, rgba(255, 255, 255, 0.07), transparent 24rem),
+        linear-gradient(160deg, var(--navy-deep), var(--navy));
+    }
+    body {
+      min-height: 100vh; min-height: 100svh;
+      font-family: var(--sans); font-size: 17px; line-height: 1.6; color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      position: relative; overflow-x: hidden;
+    }
+
+    /* Gentle snowfall (decorative, disabled for reduced motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow span {
+      position: absolute; top: -12px; border-radius: 50%; background: rgba(255, 255, 255, 0.75);
+      animation: fall linear infinite;
+    }
+    @keyframes fall { to { transform: translate3d(var(--drift, 20px), 105vh, 0); } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    .wrap { position: relative; z-index: 1; width: min(calc(100% - 32px), 620px); margin: 0 auto; padding: 56px 0 64px; }
+
+    header { text-align: center; color: #fff; margin-bottom: 32px; }
+    .monogram { width: 56px; height: 56px; margin-bottom: 18px; }
+    .eyebrow {
+      margin: 0 0 10px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    h1 {
+      margin: 0 0 14px; font-family: var(--serif); font-weight: 400;
+      font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.12; letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 auto; max-width: 470px; color: rgba(255, 255, 255, 0.78); }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 22px 0 0; color: var(--gold); }
+    .divider::before, .divider::after { content: ""; width: 48px; height: 1px; background: rgba(201, 169, 110, 0.6); }
+
+    .card {
+      background: var(--paper); border-radius: 18px; padding: 34px 32px 30px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      border-top: 4px solid var(--gold);
+    }
+    @media (max-width: 520px) { .card { padding: 26px 20px 24px; } }
+
+    .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px 14px; }
+    .f-full { grid-column: span 6; }
+    .f-city { grid-column: span 3; }
+    .f-state { grid-column: span 1; }
+    .f-zip { grid-column: span 2; }
+    @media (max-width: 520px) {
+      .f-city { grid-column: span 6; }
+      .f-state { grid-column: span 2; }
+      .f-zip { grid-column: span 4; }
+    }
+
+    label { display: block; margin-bottom: 6px; font-size: 0.88rem; font-weight: 500; color: var(--navy); }
+    .opt { font-weight: 400; color: var(--muted); }
+    .hint { display: block; margin-top: 5px; font-size: 0.8rem; color: var(--muted); }
+    input, textarea {
+      width: 100%; padding: 12px 14px; font: inherit; font-size: 16px; color: var(--ink);
+      background: #fff; border: 1px solid var(--line); border-radius: 10px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--gold-deep); box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.3); }
+    input[aria-invalid="true"] { border-color: var(--berry); }
+    textarea { min-height: 84px; resize: vertical; }
+    #state { text-transform: uppercase; }
+
+    /* Spam trap: hidden from people, visible to bots */
+    .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    .actions { margin-top: 24px; }
+    button {
+      width: 100%; padding: 15px 20px; border: 0; border-radius: 999px; cursor: pointer;
+      font: inherit; font-weight: 700; color: #fff; background: var(--navy);
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    button:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(11, 31, 51, 0.3); }
+    button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    button[disabled] { opacity: 0.6; cursor: wait; transform: none; box-shadow: none; }
+
+    .privacy { margin: 14px 0 0; text-align: center; font-size: 0.8rem; color: var(--muted); }
+    .error { display: none; margin: 16px 0 0; padding: 12px 14px; border-radius: 10px; font-size: 0.9rem; color: var(--berry); background: #f8ecec; }
+    .error.show { display: block; }
+
+    .thanks { display: none; text-align: center; padding: 18px 4px 8px; }
+    .thanks.show { display: block; }
+    .thanks h2 { margin: 6px 0 10px; font-family: var(--serif); font-weight: 400; font-size: 1.9rem; color: var(--navy); }
+    .thanks p { margin: 0 0 6px; color: var(--muted); }
+    .thanks .star { font-size: 2rem; color: var(--gold); }
+    .again { margin-top: 18px; background: transparent; color: var(--navy); border: 1px solid var(--line); width: auto; padding: 10px 20px; font-weight: 500; }
+    .again:hover { box-shadow: none; background: var(--paper-alt); }
+
+    footer { margin-top: 26px; text-align: center; font-size: 0.82rem; color: rgba(255, 255, 255, 0.55); }
+    footer a { color: rgba(255, 255, 255, 0.75); }
+  </style>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header>
+      <img class="monogram" src="/brand/cb-monogram.svg" alt="" width="56" height="56">
+      <p class="eyebrow">Christmas Card List</p>
+      <h1>We'd love to send you a Christmas card</h1>
+      <p class="lede">Please share your mailing address so we can make sure our card finds you this year. It only takes a moment.</p>
+      <div class="divider" aria-hidden="true">✦</div>
+    </header>
+
+    <section class="card">
+      <form id="address-form" novalidate>
+        <div class="grid">
+          <div class="f-full">
+            <label for="names">Name(s) for the envelope</label>
+            <input id="names" name="names" type="text" autocomplete="name" placeholder="e.g. The Smith Family or John &amp; Jane Smith" required>
+          </div>
+          <div class="f-full">
+            <label for="street">Street address</label>
+            <input id="street" name="street" type="text" autocomplete="address-line1" placeholder="123 Main St" required>
+          </div>
+          <div class="f-full">
+            <label for="unit">Apt, suite, or unit <span class="opt">(optional)</span></label>
+            <input id="unit" name="unit" type="text" autocomplete="address-line2">
+          </div>
+          <div class="f-city">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" required>
+          </div>
+          <div class="f-state">
+            <label for="state">State</label>
+            <input id="state" name="state" type="text" autocomplete="address-level1" maxlength="2" placeholder="TX" required>
+          </div>
+          <div class="f-zip">
+            <label for="zip">ZIP</label>
+            <input id="zip" name="zip" type="text" autocomplete="postal-code" inputmode="numeric" maxlength="10" required>
+          </div>
+          <div class="f-full">
+            <label for="email">Email <span class="opt">(optional)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email">
+            <span class="hint">Only used if we have a question about your address.</span>
+          </div>
+          <div class="f-full">
+            <label for="note">Note for the Bloskas family <span class="opt">(optional)</span></label>
+            <textarea id="note" name="note" placeholder="Moved recently? New addition to the family? We'd love to hear."></textarea>
+          </div>
+          <div class="trap" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submit">Send my address</button>
+        </div>
+        <p class="error" id="error" role="alert"></p>
+        <p class="privacy">Your address is private: it's only used for our card list and never shown on this site.</p>
+      </form>
+
+      <div class="thanks" id="thanks" role="status" aria-live="polite">
+        <div class="star" aria-hidden="true">✦</div>
+        <h2>Thank you!</h2>
+        <p>We've got your address. Keep an eye on your mailbox this December.</p>
+        <p>Merry Christmas from the Bloskas family!</p>
+        <button type="button" class="again" id="again">Add another address</button>
+      </div>
+    </section>
+
+    <footer>Questions? <a href="mailto:hello@calebloskas.com">hello@calebloskas.com</a></footer>
+  </main>
+
+  <script>
+    /* ------------------------------------------------------------------
+       Google Form connection. Answers are saved to the Google Form, which
+       feeds a Google Sheet. Fill these in from the form's pre-filled link.
+       ------------------------------------------------------------------ */
+    var GOOGLE_FORM = {
+      id: "PASTE_FORM_ID", // the long ID in .../forms/d/e/<ID>/viewform
+      entries: {
+        names:  "entry.0",
+        street: "entry.0",
+        unit:   "entry.0",
+        city:   "entry.0",
+        state:  "entry.0",
+        zip:    "entry.0",
+        email:  "entry.0",
+        note:   "entry.0"
+      }
+    };
+
+    (function () {
+      var form = document.getElementById("address-form");
+      var thanks = document.getElementById("thanks");
+      var errorBox = document.getElementById("error");
+      var submitBtn = document.getElementById("submit");
+      var required = ["names", "street", "city", "state", "zip"];
+
+      function showError(msg) { errorBox.textContent = msg; errorBox.classList.add("show"); }
+      function clearError() { errorBox.textContent = ""; errorBox.classList.remove("show"); }
+
+      function validate() {
+        var firstBad = null;
+        required.forEach(function (name) {
+          var el = form.elements[name];
+          var ok = el.value.trim() !== "";
+          if (name === "state") ok = /^[A-Za-z]{2}$/.test(el.value.trim());
+          if (name === "zip") ok = /^\d{5}(-?\d{4})?$/.test(el.value.trim());
+          el.setAttribute("aria-invalid", ok ? "false" : "true");
+          if (!ok && !firstBad) firstBad = el;
+        });
+        var email = form.elements.email;
+        var emailOk = email.value.trim() === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+        email.setAttribute("aria-invalid", emailOk ? "false" : "true");
+        if (!emailOk && !firstBad) firstBad = email;
+        if (firstBad) { firstBad.focus(); return false; }
+        return true;
+      }
+
+      function showThanks() {
+        form.style.display = "none";
+        thanks.classList.add("show");
+        thanks.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      form.addEventListener("input", function (e) {
+        if (e.target.getAttribute("aria-invalid") === "true") e.target.setAttribute("aria-invalid", "false");
+        clearError();
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        clearError();
+        if (!validate()) { showError("Please check the highlighted fields."); return; }
+
+        // Bots fill the hidden field; quietly pretend it worked.
+        if (form.elements.website.value) { showThanks(); return; }
+
+        if (GOOGLE_FORM.id === "PASTE_FORM_ID") {
+          showError("This form isn't connected yet. Please email hello@calebloskas.com instead.");
+          return;
+        }
+
+        var data = new URLSearchParams();
+        Object.keys(GOOGLE_FORM.entries).forEach(function (key) {
+          var value = form.elements[key].value.trim();
+          if (key === "state") value = value.toUpperCase();
+          data.append(GOOGLE_FORM.entries[key], value);
+        });
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+
+        fetch("https://docs.google.com/forms/d/e/" + GOOGLE_FORM.id + "/formResponse", {
+          method: "POST",
+          mode: "no-cors",
+          body: data
+        }).then(showThanks).catch(function () {
+          showError("Something went wrong sending your address. Please try again, or email hello@calebloskas.com.");
+        }).finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send my address";
+        });
+      });
+
+      document.getElementById("again").addEventListener("click", function () {
+        form.reset();
+        thanks.classList.remove("show");
+        form.style.display = "";
+        form.elements.names.focus();
+      });
+
+      // Snowflakes
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        var snow = document.querySelector(".snow");
+        for (var i = 0; i < 36; i++) {
+          var s = document.createElement("span");
+          var size = 2 + Math.random() * 4;
+          s.style.width = s.style.height = size + "px";
+          s.style.left = Math.random() * 100 + "%";
+          s.style.opacity = (0.25 + Math.random() * 0.6).toFixed(2);
+          s.style.animationDuration = (9 + Math.random() * 12).toFixed(1) + "s";
+          s.style.animationDelay = (-Math.random() * 20).toFixed(1) + "s";
+          s.style.setProperty("--drift", (Math.random() * 80 - 40).toFixed(0) + "px");
+          snow.appendChild(s);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
